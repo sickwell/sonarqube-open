@@ -1,0 +1,26 @@
+id: sonarqube-open
+info:
+  name: sonarqube access to projects w/o password
+  author: Ivan Nagornov aka sickwell
+  description: some description
+  severity: info
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/components/suggestions?recentlyBrowsed="
+      - "{{BaseURL}}:9999/api/components/suggestions?recentlyBrowsed="
+      - "{{BaseURL}}:8443/api/components/suggestions?recentlyBrowsed="
+      - "{{BaseURL}}:9000/api/components/suggestions?recentlyBrowsed="
+      - "{{BaseURL}}:8080/api/components/suggestions?recentlyBrowsed="
+      - "{{BaseURL}}:9090/api/components/suggestions?recentlyBrowsed="
+    matchers-condition: and
+    matchers:
+
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "results"
+        part: body
