@@ -1,8 +1,8 @@
 id: sonarqube-open
 info:
-  name: sonarqube access to projects w/o password
-  author: Ivan Nagornov aka sickwell
-  description: some description
+  name: sonarqube-open-projects
+  author: sickwell
+  description: sonarqube access to projects w/o password
   severity: info
 requests:
   - method: GET
